@@ -9,3 +9,9 @@ test("hit count increases when ship is hit", () => {
     ship.hit();
     expect(ship.hits).toBe(2);
 });
+
+test("ship can identify when it is sunk", () => {
+    expect(ship.isSunk()).toBe(false);
+    ship.hit();
+    expect(ship.isSunk()).toBe(true);
+});

@@ -1,3 +1,3 @@
-# REPO_NAME
+# battleship
 
 This Repository serves as a template reposity

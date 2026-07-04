@@ -12,4 +12,12 @@ export default class Gameboard {
         }
         return grid;
     }
+
+    placeShip(y, x, ship) {
+        // y and x should come as co-ordinates not the index. So 1, 1 is index 0, 0
+        if (x - 1 + ship.length > 10) return false;
+        for (let i = -1; i <= ship.length - 2; i++) {
+            this.grid[y - 1][x + i] = ship;
+        }
+    }
 }

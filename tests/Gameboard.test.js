@@ -2,9 +2,8 @@ import { test, expect } from "vitest";
 import Gameboard from "./../src/modules/Gameboard.js";
 import Ship from "./../src/modules/Ship.js";
 
-const gameboard = new Gameboard();
-
 test("board can place a ship", () => {
+    const gameboard = new Gameboard();
     const y = 1;
     const x = 1;
     const ship = new Ship();
@@ -13,6 +12,7 @@ test("board can place a ship", () => {
 });
 
 test("board places ship according to length", () => {
+    const gameboard = new Gameboard();
     const y = 1;
     const x = 1;
     const ship = new Ship();

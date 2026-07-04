@@ -30,3 +30,35 @@ test("board does not place ship if out of bounds", () => {
     expect(gameboard.placeShip(y, x, ship)).toBe(false);
     expect(Object.hasOwn(gameboard.grid[y - 1], ship)).toBe(false);
 });
+
+test("board receives attack", () => {
+    const gameboard = new Gameboard();
+    const y = 1;
+    const x = 1;
+    expect(gameboard.receiveAttack(y, x)).toBe(false);
+    expect(gameboard.attacks[y - 1][x - 1]).toBe(1);
+});
+
+test("board knows when ship is hit", () => {
+    const gameboard = new Gameboard();
+    const y = 1;
+    const x = 1;
+    const ship = new Ship();
+
+    gameboard.placeShip(y, x, ship);
+    expect(gameboard.receiveAttack(y, x)).toBe(true);
+    expect(gameboard.attacks[y - 1][x - 1]).toBe(1);
+});
+
+test("board tells ship it is hit", () => {
+    const gameboard = new Gameboard();
+    const y = 1;
+    const x = 1;
+    const ship = new Ship();
+
+    gameboard.placeShip(y, x, ship);
+    gameboard.receiveAttack(y, x);
+    expect(gameboard.grid[y - 1][x - 1].hits).toBe(1);
+    expect(gameboard.grid[y - 1][x].hits).toBe(1);
+    expect(gameboard.grid[y - 1][x + 1].hits).toBe(1);
+});

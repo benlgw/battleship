@@ -1,8 +1,11 @@
 import { test, expect } from "vitest";
+import Ship from "./../src/modules/Ship.js";
 
-test("Example Test", () => {
-  expect(someFunction()).toBe("someValue");
+const ship = new Ship();
+
+test("hit count increases when ship is hit", () => {
+    ship.hit();
+    expect(ship.hits).toBe(1);
+    ship.hit();
+    expect(ship.hits).toBe(2);
 });
-
-// Remove before writing tests
-function someFunction() {}

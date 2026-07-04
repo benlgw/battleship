@@ -18,6 +18,6 @@ test("board places ship according to length", () => {
     const ship = new Ship();
     gameboard.placeShip(y, x, ship);
     expect(gameboard.grid[y - 1][x - 1]).toBe(ship);
-    expect(gameboard.grid[y][x - 1]).toBe(ship);
-    expect(gameboard.grid[y + 1][x - 1]).toBe(ship);
+    expect(gameboard.grid[y - 1][x]).toBe(ship);
+    expect(gameboard.grid[y - 1][x + 1]).toBe(ship);
 });

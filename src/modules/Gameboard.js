@@ -3,6 +3,10 @@ const GRID_SIZE = 10;
 export default class Gameboard {
     constructor() {
         this.grid = this.createGrid();
+        this.attacks = this.createGrid();
+        this.attacks.forEach((row) => {
+            row.fill(0, 0, row.length - 1);
+        });
     }
 
     createGrid() {
@@ -19,5 +23,15 @@ export default class Gameboard {
         for (let i = -1; i <= ship.length - 2; i++) {
             this.grid[y - 1][x + i] = ship;
         }
+    }
+
+    receiveAttack(y, x) {
+        this.attacks[y - 1][x - 1] = 1;
+        const element = this.grid[y - 1][x - 1];
+        if (typeof element === "object") {
+            element.hit();
+            return true;
+        }
+        return false;
     }
 }

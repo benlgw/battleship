@@ -1,0 +1,23 @@
+name: Setup from template
+on: [push]
+
+jobs:
+  setup:
+    # Only runs on copies, not the template itself
+    if: ${{ github.repository != 'benlgw/vite-template' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Replace REPO_NAME placeholder
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          REPO_LOWER=$(echo "$REPO" | tr '[:upper:]' '[:lower:]')
+          sed -i "s/REPO_NAME/$REPO_LOWER/g" package.json
+          sed -i "s/REPO_NAME/$REPO/g" vite.config.js
+          sed -i "s/REPO_NAME/$REPO/g" README.md
+          sed -i "s/REPO_NAME/$REPO/g" index.html
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: initialize from template"

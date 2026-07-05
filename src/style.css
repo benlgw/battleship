@@ -1,6 +1,30 @@
+@font-face {
+    font-family: "Indubitably";
+    src:
+        url("./assets/fonts/Indubita/Indubitably.woff2") format("woff2"),
+        url("./assets/fonts/Indubita/Indubitably.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 img {
     position: absolute;
     z-index: -1;
     height: 100%;
     width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+    font-family: "Indubitably";
+    font-style: italic;
+    font-size: 100px;
+    letter-spacing: 10px;
+    color: rgb(225, 225, 255);
+    text-shadow: 1px 1px 5px black;
 }

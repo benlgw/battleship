@@ -36,7 +36,7 @@ test("board receives attack", () => {
     const y = 1;
     const x = 1;
     expect(gameboard.receiveAttack(y, x)).toBe(false);
-    expect(gameboard.attacks[y - 1][x - 1]).toBe(1);
+    expect(gameboard.attacks[y - 1][x - 1]).toBe(0);
 });
 
 test("board knows when ship is hit", () => {

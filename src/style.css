@@ -33,6 +33,7 @@ header {
 .boards {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 25px;
 
     font-family: "Indubitably";
     font-size: 25px;
@@ -56,4 +57,30 @@ header {
 
 .cell {
     border: 1px solid rgb(255, 255, 255, 0.5);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+.controls button {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 25px;
+    cursor: pointer;
+
+    font-family: "Indubitably";
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: rgb(225, 225, 255);
+
+    text-shadow: 1px 1px 5px black;
+    background-color: rgb(76, 164, 205);
+    box-shadow: 0px 0px 5px 1px black;
+    text-align: center;
+}
+
+.controls button:hover {
+    background-color: rgb(70, 150, 200);
 }

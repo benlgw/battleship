@@ -1,4 +1,5 @@
 import Gameboard from "./Gameboard.js";
+import Ship from "./Ship.js";
 
 export default class Player {
     constructor() {
@@ -10,15 +11,11 @@ export default class Player {
     }
 
     randomizeShips() {
-        this.clearBoard();
-        for (let i = 1; i <= 3; i++) {
-            const randomY = Math.floor(Math.random * 7);
-            const randomX = Math.floor(Math.random * 7);
-            computer.placeShip(randomY, randomX, new Ship());
-        }
-    }
-
-    clearBoard() {
         this.gameboard.clear();
+        for (let i = 1; i <= 5; i++) {
+            const randomY = Math.floor(Math.random() * 7 + 1);
+            const randomX = Math.floor(Math.random() * 7 + 1);
+            this.gameboard.placeShip(randomY, randomX, new Ship());
+        }
     }
 }

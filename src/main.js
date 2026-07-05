@@ -14,25 +14,29 @@ computer.randomizeShips();
 document.addEventListener("DOMContentLoaded", () => {
     dom.createBoards();
 
+    const computerBoard = document.querySelector("#computer");
+    const computerCells = computerBoard.querySelectorAll(".cell");
+    computerCells.forEach((cell) => {
+        cell.addEventListener("click", (event) => {
+            const y = event.target.getAttribute("y");
+            const x = event.target.getAttribute("x");
+            computer.attack(y, x);
+
+            const randomY = Math.floor(Math.random() * 7 + 1);
+            const randomX = Math.floor(Math.random() * 7 + 1);
+            player.attack(randomY, randomX);
+        });
+    });
+
     const randomizeButtons = document.querySelectorAll("button");
     randomizeButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (button.textContent.split(" ") === "Player") {
+            if (button.textContent.split(" ")[1] === "Player") {
                 player.randomizeShips();
-                player.showShips();
+                dom.showShips(player.gameboard.grid);
             }
-            if (button.textContent.split(" ") === "Player") {
+            if (button.textContent.split(" ")[1] === "Computer") {
                 computer.randomizeShips();
-
-                const computerBoard = document.querySelector("#computer");
-                const computerCells = computerBoard.querySelectorAll(".cell");
-                computerCells.forEach((cell) => {
-                    cell.addEventListener("click", (event) => {
-                        const y = event.target;
-                        console.log(y);
-                        computer.attack();
-                    });
-                });
             }
         });
     });

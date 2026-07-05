@@ -18,4 +18,8 @@ export default class Player {
             this.gameboard.placeShip(randomY, randomX, new Ship());
         }
     }
+
+    attack(y, x) {
+        return this.gameboard.receiveAttack(y, x);
+    }
 }

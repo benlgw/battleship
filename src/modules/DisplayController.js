@@ -7,8 +7,8 @@ export default class DisplayController {
             for (let j = 1; j <= 10; j++) {
                 const cell = document.createElement("div");
                 cell.classList.add("cell");
-                cell.setAttribute("x", i);
-                cell.setAttribute("y", j);
+                cell.setAttribute("y", i);
+                cell.setAttribute("x", j);
                 playerBoard.append(cell);
             }
         }
@@ -16,8 +16,8 @@ export default class DisplayController {
             for (let j = 1; j <= 10; j++) {
                 const cell = document.createElement("div");
                 cell.classList.add("cell");
-                cell.setAttribute("x", i);
-                cell.setAttribute("y", j);
+                cell.setAttribute("y", i);
+                cell.setAttribute("x", j);
                 computerBoard.append(cell);
             }
         }

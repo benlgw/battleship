@@ -59,6 +59,18 @@ header {
     border: 1px solid rgb(255, 255, 255, 0.5);
 }
 
+.ship {
+    background-color: rgb(128, 128, 128, 0.8);
+}
+
+.hit {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.miss {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 .controls {
     display: flex;
     justify-content: space-around;

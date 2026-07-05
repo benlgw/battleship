@@ -48,9 +48,12 @@ header {
     width: calc(60px * 10);
 
     background-color: rgb(255, 255, 255, 0.2);
-    border: 1px solid rgb(255, 255, 255, 0.5);
 
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
+}
+
+.cell {
+    border: 1px solid rgb(255, 255, 255, 0.5);
 }

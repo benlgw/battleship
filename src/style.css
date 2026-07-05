@@ -19,6 +19,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 
     height: 100px;
     font-family: "Indubitably";
@@ -27,4 +28,29 @@ header {
     letter-spacing: 10px;
     color: rgb(225, 225, 255);
     text-shadow: 1px 1px 5px black;
+}
+
+.boards {
+    display: flex;
+    justify-content: space-around;
+
+    font-family: "Indubitably";
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: rgb(225, 225, 255);
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+}
+
+.boards .player,
+.boards .computer {
+    height: calc(60px * 10);
+    width: calc(60px * 10);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: rgb(255, 255, 255, 0.2);
+    border: 1px solid rgb(255, 255, 255, 0.5);
 }

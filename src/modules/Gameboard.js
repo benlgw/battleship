@@ -32,4 +32,9 @@ export default class Gameboard {
         this.attacks[y - 1][x - 1] = 0;
         return false;
     }
+
+    clear() {
+        this.grid = this.createGrid();
+        this.attacks = this.createGrid();
+    }
 }

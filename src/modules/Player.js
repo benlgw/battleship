@@ -10,10 +10,15 @@ export default class Player {
     }
 
     randomizeShips() {
+        this.clearBoard();
         for (let i = 1; i <= 3; i++) {
             const randomY = Math.floor(Math.random * 7);
             const randomX = Math.floor(Math.random * 7);
             computer.placeShip(randomY, randomX, new Ship());
         }
+    }
+
+    clearBoard() {
+        this.gameboard.clear();
     }
 }

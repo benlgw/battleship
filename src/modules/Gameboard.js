@@ -4,9 +4,6 @@ export default class Gameboard {
     constructor() {
         this.grid = this.createGrid();
         this.attacks = this.createGrid();
-        this.attacks.forEach((row) => {
-            row.fill(0, 0, row.length - 1);
-        });
     }
 
     createGrid() {
@@ -26,12 +23,13 @@ export default class Gameboard {
     }
 
     receiveAttack(y, x) {
-        this.attacks[y - 1][x - 1] = 1;
         const element = this.grid[y - 1][x - 1];
         if (typeof element === "object") {
             element.hit();
+            this.attacks[y - 1][x - 1] = 1;
             return true;
         }
+        this.attacks[y - 1][x - 1] = 0;
         return false;
     }
 }
